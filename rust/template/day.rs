@@ -87,7 +87,7 @@ mod tests {
 
     // #[test]
     // fn test_part2() -> Result<()> {
-    //     assert_eq!(part2(&as_input(INPUT)), 1337);
+    //     assert_eq!(part2(&as_input(INPUT)?), 1337);
     //     Ok(())
     // }
 }
