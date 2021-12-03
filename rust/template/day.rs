@@ -26,7 +26,7 @@ fn part1(input: &Input) -> i32 {
 }
 
 fn part2(input: &Input) -> i32 {
-    dbg!(input);
+    // dbg!(input);
     0
 }
 
