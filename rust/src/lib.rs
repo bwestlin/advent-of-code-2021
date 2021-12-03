@@ -9,11 +9,14 @@ where
     let start = precise_time_ns();
     let mut _times = 100;
 
-    let res = f();
+    #[cfg(not(feature = "timeit"))]
+    let res = f()?;
+
+    #[cfg(feature = "timeit")]
+    let mut res = f()?;
 
     #[cfg(feature = "timeit")]
     {
-        let mut res = res;
         let dur_ns = precise_time_ns() - start;
         if dur_ns > 500_000_000 {
             _times /= 10;
@@ -21,7 +24,7 @@ where
             _times *= 10;
         }
         for _ in 0..(_times - 1) {
-            res = f();
+            res = f()?;
         }
     }
 
@@ -39,5 +42,5 @@ where
     {
         println!("It took: {}ms", dur_ns as f64 / 1_000_000.0);
     }
-    res
+    Ok(res)
 }
