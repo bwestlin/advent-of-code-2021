@@ -50,7 +50,6 @@ fn part2(input: &Input) -> i32 {
                 depth += aim * units;
             }
             Direction::Down => aim += units,
-
             Direction::Up => aim -= units,
         }
     }
