@@ -8,5 +8,5 @@ if [ -z "$DAY" ]
 fi
 
 DST="src/bin/day$DAY.rs"
-cp template/day.rs "$DST"
+cp -n template/day.rs "$DST"
 echo "$DST created"
